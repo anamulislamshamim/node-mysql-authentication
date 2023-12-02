@@ -20,16 +20,9 @@
 
     <div class="container mt-4">
         <div class="card">
-            <h5 class="card-header">Registration</h5>
+            <h5 class="card-header">Login</h5>
             <div class="card-body">   
-                <form action="/auth/register" method="POST">
-
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input placeholder="user name" type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
-                        <div id="nameHelp" class="form-text">We'll never share your personal info with anyone else.</div>
-                    </div>
-
+                <form action="/auth/login" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input placeholder="email" type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
@@ -41,12 +34,7 @@
                         <input placeholder="password" type="password" name="password" class="form-control" id="password">
                     </div>
 
-                    <div class="mb-3">
-                        <label for="passwordConfirm" class="form-label">Confirm Password</label>
-                        <input placeholder="confirm password" type="password" name="passwordConfirm" class="form-control" id="passwordConfirm">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </form>
             </div>
         </div>

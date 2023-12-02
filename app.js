@@ -9,6 +9,7 @@ const express = require("express");
 const mysql = require('mysql');
 const port = process.env.PORT || 4000;
 const publicDirectory = path.join(__dirname, './public');
+const db = require('./config/dbConnection.js');
 
 
 // create app by using express 
@@ -17,24 +18,6 @@ app = express();
 app.use(express.json());
 // to read the submitted form data (Parse url-encoded bodies sent by HTML form);
 app.use(express.urlencoded({ extended: false }));
-
-
-/* 
-for xampp default configuration:
-host: 'localhost'
-user: 'root'
-password: ''
-database: 'databasename'
-*/
-
-
-// connect the app to the mysql database. I used xampp as my portable mysql database.
-const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: 'nodejs-login'
-});
 
 
 // set up view engine for this app 
@@ -51,6 +34,7 @@ app.use(express.static(publicDirectory));
 app.set('view engine', 'hbs');
 
 
+// connect the database to this app
 db.connect( (err) => {
     if (err) {
         console.log(err);
