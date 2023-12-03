@@ -1,4 +1,5 @@
 const express = require('express');
+const { orderCtrl } = require('../controllers/dashboardController');
 const router = express.Router();
 
 
@@ -17,6 +18,16 @@ router.get('/register', (req, res) => {
 // router for login page 
 router.get('/login', (req, res) => {
     res.render('login');
+});
+
+
+// order route for normal customer 
+router.post('/order', orderCtrl);
+
+
+// rose router
+router.get('/rose', (req, res) => {
+    res.render('rose');
 });
 
 
